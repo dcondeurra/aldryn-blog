@@ -81,8 +81,7 @@ class Category(TranslatableModel):
 class RelatedManager(models.Manager):
 
     def get_query_set(self):
-        qs = super(RelatedManager, self).get_query_set()
-        return qs.select_related('key_visual')
+        return self.select_related('key_visual')
 
     def filter_by_language(self, language):
         qs = self.get_query_set()
