@@ -25,6 +25,8 @@ class LatestEntriesForm(forms.ModelForm):
             'tags': django_select2.Select2MultipleWidget
         }
 
+        fields = '__all__'
+
 
 class PostTagWidget(django_select2.widgets.Select2Mixin, taggit.forms.TagWidget):
 
@@ -47,6 +49,8 @@ class PostForm(forms.ModelForm):
         widgets = {
             'tags': PostTagWidget
         }
+
+        fields = '__all__'
 
 
 class AutoSlugForm(TranslatableModelForm):
